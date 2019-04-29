@@ -25,6 +25,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Fanuc.Webmanagement.Common\Fanuc.Webmanagement.Common.csproj" />
     <ProjectReference Include="..\Fanuc.Webmanagement.Web.Core\Fanuc.Webmanagement.Web.Core.csproj" />
   </ItemGroup>
   <ItemGroup>

@@ -16,6 +16,7 @@ using Fanuc.Webmanagement.Configuration;
 using Fanuc.Webmanagement.Identity;
 
 using Abp.AspNetCore.SignalR.Hubs;
+using Fanuc.Webmanagement.Common;
 
 namespace Fanuc.Webmanagement.Web.Host.Startup
 {
@@ -36,7 +37,8 @@ namespace Fanuc.Webmanagement.Web.Host.Startup
             services.AddMvc(
                 options => options.Filters.Add(new CorsAuthorizationFilterFactory(_defaultCorsPolicyName))
             );
-
+            services.AddOptions();
+            services.Configure<AppSettings>(_appConfiguration.GetSection("AppSettings"));
             IdentityRegistrar.Register(services);
             AuthConfigurer.Configure(services, _appConfiguration);
 

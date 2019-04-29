@@ -12,12 +12,14 @@ using Abp.Zero.Configuration;
 using Fanuc.Webmanagement.Authentication.JwtBearer;
 using Fanuc.Webmanagement.Configuration;
 using Fanuc.Webmanagement.EntityFrameworkCore;
+using Fanuc.Webmanagement.RealTime;
 
 namespace Fanuc.Webmanagement
 {
     [DependsOn(
          typeof(WebmanagementApplicationModule),
          typeof(WebmanagementEntityFrameworkModule),
+        typeof(RealTimeApplicationModule),
          typeof(AbpAspNetCoreModule)
         ,typeof(AbpAspNetCoreSignalRModule)
      )]
