@@ -31,17 +31,21 @@ namespace Fanuc.Webmanagement.RealTime
                 VirtualHost = rabbitmqConfig.VirtualPath
             };
             using (var connection = factory.CreateConnection())
-            using (var channel = connection.CreateModel())
             {
-                
-                string message = JsonConvert.SerializeObject(eventData.SmartTask) ;
-                var body = Encoding.UTF8.GetBytes(message);
+                using (var channel = connection.CreateModel())
+                {
 
-                channel.BasicPublish(exchange: exchangeName,
-                                     routingKey: routingKey,
-                                     basicProperties: null,
-                                     body: body);
+                    string message = JsonConvert.SerializeObject(eventData.SmartTask);
+                    var body = Encoding.UTF8.GetBytes(message);
+
+                    channel.BasicPublish(exchange: exchangeName,
+                                         routingKey: routingKey,
+                                         basicProperties: null,
+                                         body: body);
+                }
+
             }
+    
         }
     }
 }

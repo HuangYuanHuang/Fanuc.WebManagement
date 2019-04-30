@@ -14,6 +14,8 @@ namespace Fanuc.Webmanagement.EntityFrameworkCore
         public DbSet<SmartTask> SmartTasks { get; set; }
 
         public DbSet<SmartTaskInfo> SmartTaskInfos { get; set; }
+
+        public DbSet<SmartTaskConfig> SmartTaskConfigs { get; set; }
         public WebmanagementDbContext(DbContextOptions<WebmanagementDbContext> options)
             : base(options)
         {

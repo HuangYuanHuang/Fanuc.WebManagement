@@ -48,4 +48,30 @@ namespace Fanuc.Webmanagement.TaskPlan
             CreationTime = DateTime.Now;
         }
     }
+
+    [Table("Smart_TaskConfig")]
+
+    public class SmartTaskConfig : Entity<string>, IHasCreationTime
+    {
+        public string ProductID { get; set; }
+
+        public string ProductName { get; set; }
+        public string TaskName { get; set; }
+
+        public string TaskTag { get; set; }
+
+
+        public string CMD { get; set; }
+
+        public string Parms { get; set; }
+
+        public string Type { get; set; }
+        public DateTime CreationTime { get; set; }
+        public SmartTaskConfig()
+        {
+            CreationTime = DateTime.Now;
+            Type = "Console";
+        }
+
+    }
 }

@@ -3,14 +3,16 @@ using System;
 using Fanuc.Webmanagement.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Fanuc.Webmanagement.Migrations
 {
     [DbContext(typeof(WebmanagementDbContext))]
-    partial class WebmanagementDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190429083000_smartConfigProductID")]
+    partial class smartConfigProductID
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
